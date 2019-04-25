@@ -6,65 +6,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web Pager</title>
+	<link rel="icon" type = "image/jpg" href="\\ad.infosys.com\storage\GEC\TRAINEE\Projects\Interns2019\Dec18_Interns_Batch2\Dec18_Interns_Batch2_Mysore\29\Project-Sprint 2\Final_Project\download.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
     <script src="./main.js"></script>
 </head>
 <body>
-
-    <div class="editor" contenteditable>
-
-    </div>
-    <br />
-    <div class="toolbar">
-        <button class="tool-items" title="Heading h1" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h1>');">H1</button>
-        <button class="tool-items" title="Heading h2" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h2>');">H2</button>
-        <button class="tool-items" title="Heading h3" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h3>');">H3</button>
-        <button class="tool-items" title="Heading h4" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h4>');">H4</button>
-        <button class="tool-items" title="Heading h5" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h5>');">H5</button>
-        <button class="tool-items" title="Heading h6" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h6>');">H6</button>
-        <button class="tool-items fa fa-underline" title="Underline" onclick="document.execCommand('underline', false, '');"></button>
-        <button class="tool-items fa fa-italic" title="Italics" onclick="document.execCommand('italic', false, '');"></button>
-        <button class="tool-items fa fa-bold" title="bold" onclick="document.execCommand('bold', false, '');"></button>
-        <button class="tool-items fa fa-link" title="Add Link" onclick="link()"></button>
-        <button class="tool-items fa fa-scissors" title="Cut" onclick="document.execCommand('cut',false,'')"></button>
-        <input class="tool-items fa fa-file-image-o" type="file" accept="image/*" id="file" style="display: none;" onclick="getImage()">
-        <label for="file" title="Add Image" class="tool-items fa fa-file-image-o"></label>
-       
-        <button class="tool-items fa fa-undo" title="Undo" onclick="document.execCommand('undo',false,'')"></button>
-        <button class="tool-items fa fa-repeat" title="Redo" onclick="document.execCommand('redo',false,'')"></button>
-        <button class="tool-items fa fa-tint" title="Add Color" onclick="changeColor()"></button>
-        <button class="tool-items fa fa-strikethrough" title="Strike" onclick="document.execCommand('strikeThrough',false,'')"></button>
-        <button class="tool-items fa fa-trash" title="Delete" onclick="document.execCommand('delete',false,'')"></button>
-        <button class="tool-items fa fa-scribd" title="SelectAll" onclick="document.execCommand('selectAll',false,'')"></button>
-        <button class="tool-items fa fa-clone" title="Copy" onclick="copy()"></button>
-        <button class="tool-items fa  fa-list-ol" title="Ordered List" onclick="document.execCommand('insertOrderedList',false,'')"></button>
-        <button class="tool-items fa  fa-list" title="Unordered List" onclick="document.execCommand('insertUnorderedList',false,'')"></button>
-        <button class="tool-items fa fa-align-left" title="Align Left" onclick="document.execCommand('justifyLeft',false,'')"></button>
-        <button class="tool-items fa fa-align-center" title="Align Center" onclick="document.execCommand('justifyCenter',false,'')"></button>
-        <button class="tool-items fa fa-align-right" title="Align Right" onclick="document.execCommand('justifyRight',false,'')"></button>
-        <button class="tool-items fa fa-subscript" title="Subscript" onclick="document.execCommand('subscript',false,'')"></button>
-        <button class="tool-items fa fa-superscript" title="Superscript" onclick="document.execCommand('superscript',false,'')"></button>
-        <button class="tool-items fa  fa-table" onclick="tablecreation()"></button>
-
-        <SELECT class="addbtn" name="element" style="width:65px;">
-            <OPTION value="button">Button</OPTION>
-            <OPTION value="text">Textbox</OPTION>
-            <OPTION value="radio">Radio</OPTION>
-        </SELECT>
-        <button class="tool-items " onclick="buttoncreation(document.querySelector('.addbtn').value)">Create</button>
+    <!-- LOADER DIV -->
+    <div class="loader" id="particles-js">
+        <div class=" text-center">
+            <button class="btn1 btn-lg btn-outline-danger" onclick="loading()" id="loaderbtn">WELCOME TO WEB PAGER</button>
+        </div>
     </div>
 
+    <!-- CONTENT DIV -->
+    <div id="mainPage">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="editor col-8" contenteditable>
+                </div>
 
-    <div class="center">
-        <button class="sai btn">GetHtml</button>
-        <button class="getText btn">GetText</button>
-        <button class="btn print" onclick="printMe()">PrintHtml</button>
-		<button class="btn print" onclick="printMeText()">Print Html as page </button>
+                <br />
+                <div class="toolbar Jumbotron col-2 ">
+                    <button class="tool-items" title="Heading h1" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h1>');">H1</button>
+                    <button class="tool-items" title="Heading h2" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h2>');">H2</button>
+                    <button class="tool-items" title="Heading h3" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h3>');">H3</button>
+                    <button class="tool-items" title="Heading h4" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h4>');">H4</button>
+                    <button class="tool-items" title="Heading h5" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h5>');">H5</button>
+                    <button class="tool-items" title="Heading h6" style="font-size:17px" onclick="document.execCommand('formatBlock', false, '<h6>');">H6</button>
+                    <button class="tool-items fa fa-underline" title="Underline" onclick="document.execCommand('underline', false, '');"></button>
+                    <button class="tool-items fa fa-italic" title="Italics" onclick="document.execCommand('italic', false, '');"></button>
+                    <button class="tool-items fa fa-bold" title="bold" onclick="document.execCommand('bold', false, '');"></button>
+                    <button class="tool-items fa fa-link" id="link" title="Add Link" onclick="link()"></button>
+                    <button class="tool-items fa fa-scissors" title="Cut" onclick="document.execCommand('cut',false,'')"></button>
+                    <input class="tool-items fa fa-file-image-o" type="file" accept="image/*" id="file" style="display: none;" onchange="getImage()">
+                    <label for="file" class="tool-items fa fa-file-image-o" title="Add Image"></label>
+                    <input class="tool-items fa fa-file-video-o" type="file" accept="video/*" id="file1" style="display: none;" onchange="getVideo()">
+                    <label for="file1" class="tool-items fa fa-file-video-o" title="Add Video"></label>
+                    <input class="tool-items fa fa-file-audio-o" type="file" accept="audio/*" id="file2" style="display: none;" onchange="getAudio()">
+                    <label for="file2" class="tool-items fa fa-file-audio-o" title="Add Audio"></label>
+                    <button class="tool-items fa fa-undo" title="Undo" onclick="document.execCommand('undo',false,'')"></button>
+                    <button class="tool-items fa fa-repeat" title="Redo" onclick="document.execCommand('redo',false,'')"></button>
+                    <button class="tool-items fa fa-tint" title="Add Color" onclick="changeColor()"></button>
+                    <button class="tool-items fa fa-strikethrough" title="Strike" onclick="document.execCommand('strikeThrough',false,'')"></button>
+                    <button class="tool-items fa fa-trash" title="Delete" onclick="document.execCommand('delete',false,'')"></button>
+                    <button class="tool-items fa fa-scribd" title="SelectAll" onclick="document.execCommand('selectAll',false,'')"></button>
+                    <button class="tool-items fa fa-clone" title="Copy" onclick="copy()"></button>
+                    <button class="tool-items fa  fa-list-ol" title="Ordered List" onclick="document.execCommand('insertOrderedList',false,'')"></button>
+                    <button class="tool-items fa  fa-list" title="Unordered List" onclick="document.execCommand('insertUnorderedList',false,'')"></button>
+                    <button class="tool-items fa fa-align-left" title="Align Left" onclick="document.execCommand('justifyLeft',false,'')"></button>
+                    <button class="tool-items fa fa-align-center" title="Align Center" onclick="document.execCommand('justifyCenter',false,'')"></button>
+                    <button class="tool-items fa fa-align-right" title="Align Right" onclick="document.execCommand('justifyRight',false,'')"></button>
+                    <button class="tool-items fa fa-subscript" title="Subscript" onclick="document.execCommand('subscript',false,'')"></button>
+                    <button class="tool-items fa fa-superscript" title="Superscript" onclick="document.execCommand('superscript',false,'')"></button>
+                    <button class="tool-items fa  fa-table" onclick="tablecreation()"></button>
+
+                    <SELECT class="addbtn" name="element" style="width:65px;">
+                        <OPTION value="button">Button</OPTION>
+                        <OPTION value="text">Textbox</OPTION>
+                        <OPTION value="radio">Radio</OPTION>
+                    </SELECT>
+                    <button class="tool-items " onclick="buttoncreation(document.querySelector('.addbtn').value)">Create</button>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL FOR TABLE INPUT -->
+        <div id="myModal2" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h5 id="displayText"></h5>
+                <input type="text" id="userInput" />
+                </br>
+                <div class="row">
+                    <button class=" modclose btn btn-primary" id="userSubmit">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL FOR IMAGE RESIZE POPUP -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h1><i class="fa fa-expand" aria-hidden="true"></i> Resize Image</h1>
+                </br>
+                <div class="row">
+                    <button class="smallImg imgbtn btn btn-primary" onclick="smallImg()"><i class="fa fa-picture-o fa-lg" aria-hidden="true"></i> Small</button>
+                    <button class="medImg imgbtn btn btn-primary" onclick="medImg()"><i class="fa fa-picture-o fa-2x" aria-hidden="true"></i> Medium</button>
+                    <button class="larImg imgbtn btn btn-primary" onclick="larImg()"><i class="fa fa-picture-o fa-4x" aria-hidden="true"></i> Large</button>
+                </div>
+            </div>
+        </div>
+		<br/>
+		
+        <div class="center text-center">
+            <button class="sai btn">GetHtml</button>
+            <button class="getText btn">GetText</button>
+            <button class="btn print" onclick="printMe()">PrintHtml</button>
+            <button class="btn print" onclick="printMeText()">Print Html as page </button>
+        </div>
+        <div class="center">
+            <section class="getcontent"></section>
+        </div>
     </div>
-    <div class="center">
-        <section class="getcontent"></section>
-    </div>
+
+    <!-- SCRIPT FILES -->
     <script src="./main.js"></script>
 </body>
 </html>
